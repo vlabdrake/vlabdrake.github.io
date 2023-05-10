@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>vlabdrake - Год GNOME</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="MobileOptimized" content="176">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Год GNOME">
+  <meta property="og:description" content="Новый год &mdash; это время чудес. Вот я и решил проверить, случилось ли чудо и стал ли GNOME готов для десктопа. Для того, чтобы составить взвешенное мнение, я решил пользоваться им в течение этого года (если выдержу, конечно).
+  Актуальная версия на данный момент 43, в качестве дистрибутива &mdash; Arch Linux. Первым делом хочется красивых тем и нескучных обоев. Начиная с 42 версии в GNOME есть поддержка общесистемного тёмного стиля оформления, по типу соответствующей настройки в macos.">
+  <meta property="og:image" content="">
+  <meta property="og:site_name" content="Vlabdrake personal blog">
+  <meta property="article:published_time" content="2023-01-04T09:53:36+0000">
+  <meta property="article:modified_time" content="2023-01-04T09:53:36+0000">
+  <meta property="article:author" content="vlabdrake">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Год GNOME">
+  <meta name="twitter:description" content="Новый год &mdash; это время чудес. Вот я и решил проверить, случилось ли чудо и стал ли GNOME готов для десктопа. Для того, чтобы составить взвешенное мнение, я решил пользоваться им в течение этого года (если выдержу, конечно).
+  Актуальная версия на данный момент 43, в качестве дистрибутива &mdash; Arch Linux. Первым делом хочется красивых тем и нескучных обоев. Начиная с 42 версии в GNOME есть поддержка общесистемного тёмного стиля оформления, по типу соответствующей настройки в macos.">
+  <meta name="twitter:image" content="">
+  <link rel="canonical" href="https://vlabdrake.github.io/23-04-01-year-of-gnome">
+  <link rel="shortcut icon" href="/favicon.ico?1" type="image/x-icon">
+  <link rel="icon" type="image/png" href="/favicon.png?1" sizes="16x16">
+  <link rel="icon" type="image/png" href="/favicon_2x.png?1" sizes="32x32">
+  <link href="/core.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="page_wrap">
+    <div class="page">
+      <main class="article">
+        <header class="article_header">
+          <h1>Год GNOME</h1>
+          <address>
+            <a rel="author" href="https://t.me/vlabdrake" target="_blank">vlabdrake</a>
+            <time datetime="2023-01-04T09:53:36+0000">4 января 2023</time>
+          </address>
+        </header>
+        <article class="article_content">
+          <p>
+            Новый год &mdash; это время чудес. Вот я и решил проверить, случилось ли чудо и стал ли GNOME готов для десктопа. Для того, чтобы составить взвешенное мнение, я решил пользоваться им в течение этого года (если выдержу, конечно).
+          </p>
+          <p>
+            Актуальная версия на данный момент 43, в качестве дистрибутива &mdash; Arch Linux. Первым делом хочется красивых тем и нескучных обоев. Начиная с 42 версии в GNOME есть поддержка общесистемного тёмного стиля оформления, по типу соответствующей настройки в macos.
+          </p>
+          <figure>
+            <img src="/23-01-04-year-of-gnome/a9efd4c3ce5a2a3aeee36.png">
+            <figcaption>Настройки GNOME</figcaption>
+          </figure>
+          <p>Однако, есть два разительных отличия от купертиновской версии этой фичи:</p>
+          <ol>
+            <li>эта настройка действует только на приложения, использующие GTK4, остальные приложения её игнорируют;</li>
+            <li>она не поддерживает переключение в зависимости от времени суток или, хотя бы, по расписанию.</li>
+          </ol>
+          <p>
+            Но весь блеск opensource в том, что уже нашёлся человек, который придумал решение этих проблем! Romain Vigier сделал расширение Night Theme Switcher, которое позволяет решить обе проблемы.
+          </p>
+          <figure>
+            <img src="/23-01-04-year-of-gnome/2b9fde6a07c06be91f5be.png">
+            <figcaption></figcaption>
+          </figure>
+          <p>
+            С одной стороны, оно позволяет переключать режимы по расписанию или, если есть доступ к геолокации, в зависимости от времени суток.
+          </p>
+          <figure>
+            <img src="/23-01-04-year-of-gnome/46546149015c8c0a14546.png">
+            <figcaption></figcaption>
+          </figure>
+          <p>
+            С другой стороны, оно также позволяет изменять темы GTK3, Gnome Shell, иконок и даже курсора:
+          </p>
+          <figure>
+            <img src="/23-01-04-year-of-gnome/13d6d3bfe3a3df17c91f0.png">
+            <figcaption></figcaption>
+          </figure>
+          <p>
+            В качестве GTK3 темы я взял неофициальный порт libadwaita <a href="https://github.com/lassekongo83/adw-gtk3" target="_blank">https://github.com/lassekongo83/adw-gtk3</a> для создания единого стиля приложений GTK3 и GTK4
+          </p>
+          <figure>
+            <img src="/23-01-04-year-of-gnome/23ee57a250484479e8310.png">
+            <figcaption>VSCodium, GNOME Web, GNOME Console и Firefox в светлых и тёмных тонах</figcaption>
+          </figure>
+          <p>
+            Да, наверное это не самая обязательная фича, но именно из таких мелочей складывается пользовательский опыт. На очереди разборки с ненавистным Activities Overview, выбор лончера и прочие улучшения.
+          </p>
+        </article>
+      </main>
+    </div>
+  </div>
+</body></html>

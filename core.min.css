@@ -3,6 +3,8 @@ body,html{padding:0;margin:0;min-height:100%}
 .page{max-width:732px;margin:0 auto;position:relative;padding:21px 0;width:100%;flex-grow:1}
 .page_footer{background-color:#f2f2f2;display:none}
 .page_footer_visible{display:block}
+.footer_button{font-family:CustomSansSerif,'Lucida Grande',Arial,sans-serif;font-size:13px;line-height:16px;padding:8px 15px;color:#888;text-align:center;}
+.footer_button a {color:#888;cursor:pointer;text-decoration:none}
 .article_header{word-wrap:break-word}
 .article .article_header {display:block}
 .article .article_content address,.article .article_content h1,.article_edit .article_header{display:none}
@@ -14,9 +16,6 @@ body,html{padding:0;margin:0;min-height:100%}
 .article h2{font-size:24px;margin:-6px 21px 12px;color:rgba(0,0,0,.44)}
 .article address{font-family:CustomSansSerif,'Lucida Grande',Arial,sans-serif;font-size:15px;line-height:18px;color:#79828B;margin:12px 21px;font-style:normal}
 .article address a{color:#79828B}
-.article address.empty{display:none}
-.article address time:before{content:'\2022';padding:0 7px}
-.article address a[rel=author]:empty+time:before,.article time:empty:before{display:none}
 .article a[href]{color:inherit;-webkit-tap-highlight-color:rgba(0,0,0,.44);text-decoration:none;border-bottom:.1em solid rgba(0,0,0,.7)}
 .article address a[href]{border-bottom:none}
 .article.article_edit address a[href]{border-bottom:.1em solid rgba(0,0,0,.4)}

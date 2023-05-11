@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>vlabdrake - Год GNOME, часть вторая</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="MobileOptimized" content="176">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Год GNOME, часть вторая">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="">
+  <meta property="og:site_name" content="Vlabdrake personal blog">
+  <meta property="article:published_time" content="2023-05-12T09:53:36+0000">
+  <meta property="article:modified_time" content="2023-05-12T09:53:36+0000">
+  <meta property="article:author" content="vlabdrake">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Год GNOME, часть вторая">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="">
+  <link rel="canonical" href="https://vlabdrake.github.io/23-05-12-year-of-gnome-part-2">
+  <link rel="shortcut icon" href="/favicon.ico?1" type="image/x-icon">
+  <link rel="icon" type="image/png" href="/favicon.png?1" sizes="16x16">
+  <link rel="icon" type="image/png" href="/favicon_2x.png?1" sizes="32x32">
+  <link href="/core.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="page_wrap">
+    <div class="page">
+      <main class="article">
+        <header class="article_header">
+          <h1>Год GNOME, часть вторая</h1>
+          <address>
+            <time datetime="2023-05-12T09:53:36+0000">12 мая 2023</time>
+          </address>
+        </header>
+        <article class="article_content">
+          <figure>
+            <img src="/23-05-12-year-of-gnome-part-2/desktop.png">
+            <figcaption></figcaption>
+          </figure>
+          <p>
+            Вот уже 4,5 месяца я пользуюсь Gnome в качестве основного окружения на своём ноутбуке. За это время в Arch Linux на днях добавили Gnome 44, вышедший уже месяц назад, а я успел поставить macos на десктоп (но об этом в другой раз). В прошлый раз я разобрался с тёмной и светлой темами, а также их автоматическим переключением. На очереди оставались Activities Overview и лончер приложений.
+          </p>
+          <p>
+            Но сначала вернёмся на шаг назад. С переключением тем я разобрался не до конца &mdash; расширение NightThemeSwitcher довольно странно рассчитывало время рассвета и заката по геолокации, в моём случае расхождение было слишком баольшим, чтобы этой фичей можно было пользоваться. Использование переключения по расписанию требует периодически вносить коррективы в настройки, так как границы светового дня не стоят на месте. Поэтому мне пришлось написать этот расчёт самому и править границы в настройках расширения в dconf.
+          </p>
+          <p>
+            Пока не ушёл далеко от темы тем, Gnome поддерживает динамические обои рабочего стола, позволяющие использовать различные изображения для светлой и тёмной темы. Оказывается, что можно делать такие обои и самому с помошью утилиты <a href="https://github.com/dusansimic/dynamic-wallpaper">Dynamic Wallpaper</a>
+          </p>
+          <p>
+            Вернёмся к намеченному плану. По умолчанию после входа в систему среда Gnome встречает вас activities overview:
+          </p>
+          <figure>
+            <img src="/23-05-12-year-of-gnome-part-2/activities-overview.png">
+            <figcaption>Activities overview</figcaption>
+          </figure>
+          <p>
+            Выгладит оно, конечно, интересно, но для меня совершенно бесполезно. Основная моя претензия &mdash; совершенно дезориентирующие анимации при переходе от рабочего стола к overview и обратно, особенно при использовании его для запуска приложений. Поэтому требуется сделать 2 вещи
+          </p>
+          <ol>
+            <li>поставить запускалку приложений</li>
+            <li>при запуске показывать сразу рабочий стол</li>
+          </ol>
+          <p>
+            Для решения второй проблемы есть расширение dash to dock, в настройках которого можно включить соответствующую опцию. Так же оно добавляет док с запущенными приложениями.
+          </p>
+          <p>
+            А для запуска приложений, можно использовать ulauncher. Но он игнорирует системную тему и выделяется на фоне остальных приложений. Поэтому я решил написать свой собственный лончер на Vala с gtk4 и libadwaita.
+          </p>
+          <p>
+            С переходом на Gtk4 разработчики Gnome решили не портировать gnome-terminal, вместо этого они с нуля написали gnome-console. Но blackbox выглядит круче 
+          </p>
+          <p>
+            Ещё популярным направлением стало писать gtk4 на rust. Amberol -- пушка!
+          </p>
+        </article>
+      </main>
+    </div>
+    <div class="page_footer page_footer_visible">
+        <div class="footer_button"><a href="/">На главную</a></div>
+    </div>
+  </div>
+</body></html>

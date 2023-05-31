@@ -11,16 +11,16 @@
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Личный блог vlabdrake">
-  <meta property="og:description" content="">
-  <meta property="og:image" content="">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:image" content="{{ image }}">
   <meta property="og:site_name" content="Vlabdrake personal blog">
   <meta property="article:published_time" content="{{ published_time }}">
   <meta property="article:modified_time" content="{{ modified_time }}">
   <meta property="article:author" content="vlabdrake">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Личный блог vlabdrake">
-  <meta name="twitter:description" content="">
-  <meta name="twitter:image" content="">
+  <meta name="twitter:title" content="{{ title }}">
+  <meta name="twitter:description" content="{{ description }}">
+  <meta name="twitter:image" content="{{ image }}">
   <link rel="canonical" href="https://vlabdrake.github.io">
   <link rel="shortcut icon" href="/favicon.ico?1" type="image/x-icon">
   <link rel="icon" type="image/png" href="/favicon.png?1" sizes="16x16">
@@ -44,5 +44,10 @@
         </article>
       </main>
     </div>
+    {% block footer -%}
+    <div class="page_footer page_footer_visible">
+        <div class="footer_button"><a href="/">На главную</a></div>
+    </div>
+    {%- endblock footer %}
   </div>
 </body></html>

@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block header -%}
+          <h1>{{ title }}</h1>
+          <address>
+            <time datetime="{{ published_time }}">{{ date }}</time>
+          </address>
+{%- endblock header %}

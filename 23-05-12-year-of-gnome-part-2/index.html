@@ -2,13 +2,7 @@ title = "Год GNOME, часть вторая"
 description = "Второй пост в серии, в котором я прохожусь по досаждающим мне мелочам в GNOME"
 image = "https://vlabdrake.github.io/23-05-12-year-of-gnome-part-2/desktop.png"
 ---
-{% extends "layout.html" %}
-{% block header -%}
-          <h1>{{ title }}</h1>
-          <address>
-            <time datetime="{{ published_time }}">{{ date }}</time>
-          </address>
-{%- endblock header %}
+{% extends "article.html" %}
 {% block content -%}
           <figure>
             <img src="/23-05-12-year-of-gnome-part-2/desktop.png">

@@ -2,12 +2,11 @@
 {% block header -%}
           <h1>{{ title }}</h1>
           <address>
-            <time datetime="{{ published_time }}">{{ date }}</time>
           <details>
-            <summary>История изменений</summary>
-            <ul>
+            <summary><time datetime="{{ published_time }}">{{ date }}</time></summary>
+            <ul class=edit_history>
             {%- for edit in history | reverse %}
-              <li><time>{{ edit.datetime }}</time> {{ edit.summary }}</li>
+            {% if loop.index != 1 %}<li><time>{{ edit.datetime }}</time> {{ edit.summary }}</li>{% endif %}
             {%- endfor %}
           </ul>
           </details>

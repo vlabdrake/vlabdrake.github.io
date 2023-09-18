@@ -22,11 +22,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -35,6 +31,23 @@ jobs:
           fetch-depth: 0 # checkout all history for bb
       - name: Generate
         uses: vlabdrake/bb-action@main
+      - name: Save artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: my-artifact
+          path: _blog
+  # Single deploy job since we're just deploying
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Load artifact
+        uses: actions/download-artifact@master
+        with:
+          name: my-artifact
+          path: _blog
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
@@ -45,3 +58,25 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+
+  deploy-to-cloudflare:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    name: Deploy to Cloudflare Pages
+    steps:
+      - name: Load artifact
+        uses: actions/download-artifact@master
+        with:
+          name: my-artifact
+          path: _blog
+      - name: Publish
+        uses: cloudflare/pages-action@1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: vlabdrake 
+          directory: _blog
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+

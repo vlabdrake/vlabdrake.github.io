@@ -5,7 +5,7 @@
           <details>
             <summary><time datetime="{{ published_time }}">{{ date }}</time></summary>
             <ul class=edit_history>
-            {%- for edit in history | reverse %}
+            {%- for edit in history %}
             {% if loop.index != 1 %}<li><time>{{ edit.datetime }}</time> {{ edit.summary }}</li>{% endif %}
             {%- endfor %}
           </ul>
